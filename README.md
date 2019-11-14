@@ -1,14 +1,19 @@
 # React component wrapper for [Mathquill](http://mathquill.com/)
 
-[![npm version](https://badge.fury.io/js/react-mathquill.svg)](https://badge.fury.io/js/react-mathquill)
+The original version of library is here! [viktorstrate/react-mathquill](https://github.com/viktorstrate/react-mathquill)
+
+[![npm version](https://badge.fury.io/js/react-mathquill.svg)](https://badge.fury.io/js/react-mathquill2.svg)
 
 ## Example
 
 > Link to an [example](https://viktorstrate.github.io/react-mathquill/)
 
 ```javascript
+/**
+ * Editable component
+ */
 import React from 'react'
-import MathQuill, { addStyles as addMathquillStyles } from 'react-mathquill'
+import EditableMathQuill, { addStyles as addMathquillStyles } from 'react-mathquill'
 
 // inserts the required css to the <head> block.
 // You can skip this, if you want to do that by your self.
@@ -23,12 +28,40 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <MathQuill
+      <EditableMathQuill
         latex={this.state.latex} // Initial latex value for the input field
         onChange={mathField => {
           // Called everytime the input changes
           this.setState({ mathField.latex() })
         }}
+      />
+    )
+  }
+}
+```
+
+```javascript
+/**
+ * Static component
+ */
+import React from 'react'
+import StaticMathQuill, {
+  addStyles as addMathquillStyles,
+} from 'react-mathquill'
+
+addMathquillStyles()
+
+export default class App extends React.Component {
+  constructor() {
+    this.state = {
+      latex: '\\frac{1}{\\sqrt{2}}\\cdot 2',
+    }
+  }
+
+  render() {
+    return (
+      <StaticMathQuill
+        latex={this.state.latex} // Initial latex value for the input field
       />
     )
   }
