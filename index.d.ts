@@ -34,8 +34,6 @@ declare module 'react-mathquill2' {
     mathquillDidMount?: (mathField: MathField) => void
   }
 
-  export default EditableMathQuillComponent
-
   declare class EditableMathQuillComponent extends React.Component<
     EditableMathQuillComponent
   > {
@@ -48,11 +46,11 @@ declare module 'react-mathquill2' {
     mathquillDidMount?: (mathField: MathField) => void
   }
 
-  export default StaticMathQuillComponent
-
   declare class StaticMathQuillComponent extends React.Component<
     StaticMathQuillProps
   > {
     constructor(props: MathQuillProps)
   }
+
+  export { EditableMathQuillComponent, StaticMathQuillComponent }
 }

@@ -1,8 +1,9 @@
 {
   "name": "react-mathquill2",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "React component wrapper for Mathquill with typescript declare",
   "main": "index.js",
+  "types": ":",
   "repository": "git@github.com:moltak/react-mathquill2.git",
   "author": "moltak <moltak@gmail.com>",
   "license": "MIT",
