@@ -2,7 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 // import the library
-import EditableMathQuill, { addStyles as addMathquillStyles } from '../../index'
+import {
+  EditableMathQuill,
+  StaticMathQuill,
+  addStyles as addMathquillStyles,
+} from '../../index'
 
 addMathquillStyles()
 
@@ -19,6 +23,7 @@ class App extends React.Component {
     }
 
     this.mathQuillEl = null
+    this.staticMathEl = null
 
     this.resetField = () => {
       this.mathQuillEl.latex(initialLatex)
@@ -30,7 +35,7 @@ class App extends React.Component {
       <div>
         Math field:{' '}
         <EditableMathQuill
-          className="mathquill-example-field"
+          className='mathquill-example-field'
           latex={this.state.latex}
           onChange={mathField => {
             const latex = mathField.latex()
@@ -46,13 +51,25 @@ class App extends React.Component {
             this.mathQuillEl = el
           }}
         />{' '}
-        <div className="result-container">
+        <div>
+          Static Math:
+
+          <StaticMathQuill
+            className='mathquill-static-example-field'
+            latex={this.state.latex}
+            mathquillDidMount={el => {
+              console.log('StaticMath has been loaded')
+              this.staticMathEl = el
+            }}
+          />
+        </div>
+        <div className='result-container'>
           <span> Raw latex: </span>{' '}
-          <span className="result-latex"> {this.state.latex} </span>{' '}
+          <span className='result-latex'> {this.state.latex} </span>{' '}
         </div>{' '}
-        <div className="result-container">
+        <div className='result-container'>
           <span> Raw text: </span>{' '}
-          <span className="result-latex"> {this.state.text} </span>{' '}
+          <span className='result-latex'> {this.state.text} </span>{' '}
         </div>{' '}
         <button onClick={this.resetField}> Reset field </button>{' '}
       </div>
