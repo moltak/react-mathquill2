@@ -27,7 +27,7 @@ declare module 'react-mathquill2' {
     el(): string
   }
 
-  export interface Props {
+  export interface EditableMathQuillProps {
     latex: string
     config?: Config
     onChange?: (mathField: MathField) => void
@@ -36,7 +36,23 @@ declare module 'react-mathquill2' {
 
   export default EditableMathQuillComponent
 
-  declare class EditableMathQuillComponent extends React.Component<Props> {
+  declare class EditableMathQuillComponent extends React.Component<
+    EditableMathQuillComponent
+  > {
+    constructor(props: MathQuillProps)
+  }
+
+  export interface StaticMathQuillProps {
+    latex: string
+    config?: Config
+    mathquillDidMount?: (mathField: MathField) => void
+  }
+
+  export default StaticMathQuillComponent
+
+  declare class StaticMathQuillComponent extends React.Component<
+    StaticMathQuillProps
+  > {
     constructor(props: MathQuillProps)
   }
 }
