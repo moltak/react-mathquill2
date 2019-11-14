@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 // import the library
-import MathQuill, { addStyles as addMathquillStyles } from '../../index'
+import EditableMathQuill, { addStyles as addMathquillStyles } from '../../index'
 
 addMathquillStyles()
 
@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <div>
         Math field:{' '}
-        <MathQuill
+        <EditableMathQuill
           className="mathquill-example-field"
           latex={this.state.latex}
           onChange={mathField => {
@@ -37,21 +37,24 @@ class App extends React.Component {
             const text = mathField.text()
             console.log('latex changed:', latex)
             console.log('text changed:', text)
-            this.setState({ latex, text })
+            this.setState({
+              latex,
+              text,
+            })
           }}
           mathquillDidMount={el => {
             this.mathQuillEl = el
           }}
-        />
+        />{' '}
         <div className="result-container">
-          <span>Raw latex:</span>
-          <span className="result-latex">{this.state.latex}</span>
-        </div>
+          <span> Raw latex: </span>{' '}
+          <span className="result-latex"> {this.state.latex} </span>{' '}
+        </div>{' '}
         <div className="result-container">
-          <span>Raw text:</span>
-          <span className="result-latex">{this.state.text}</span>
-        </div>
-        <button onClick={this.resetField}>Reset field</button>
+          <span> Raw text: </span>{' '}
+          <span className="result-latex"> {this.state.text} </span>{' '}
+        </div>{' '}
+        <button onClick={this.resetField}> Reset field </button>{' '}
       </div>
     )
   }

@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { MathQuill } from './mathquill-loader'
+import {
+  MathQuill
+} from './mathquill-loader'
 
-class MathQuillComponent extends React.Component {
+class EditableMathQuillComponent extends React.Component {
   constructor(props) {
     super(props)
 
@@ -59,22 +61,25 @@ class MathQuillComponent extends React.Component {
       ...otherProps
     } = this.props
 
-    return (
-      <div
-        {...otherProps}
-        ref={x => {
+    return ( <
+      div {
+        ...otherProps
+      }
+      ref = {
+        x => {
           this.element = x
-        }}
+        }
+      }
       />
     )
   }
 }
 
-MathQuillComponent.propTypes = {
+EditableMathQuillComponent.propTypes = {
   latex: PropTypes.string,
   onChange: PropTypes.func,
   config: PropTypes.object,
   mathquillDidMount: PropTypes.func,
 }
 
-export default MathQuillComponent
+export default EditableMathQuillComponent

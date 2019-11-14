@@ -1,4 +1,4 @@
-import MathQuillComponent from './Component'
+import EditableMathQuill from './EditableMathQuillComponent'
 import style from '@edtr-io/mathquill/build/mathquill.css'
 
 export function addStyles() {
@@ -12,4 +12,4 @@ export function addStyles() {
   }
 }
 
-export default MathQuillComponent
+export default EditableMathQuill
