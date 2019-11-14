@@ -6,14 +6,14 @@ The original version of library is here! [viktorstrate/react-mathquill](https://
 
 ## Example
 
-> Link to an [example](https://viktorstrate.github.io/react-mathquill/)
+> Link to an [example](https://moltak.github.io/react-mathquill2/)
 
 ```javascript
 /**
  * Editable component
  */
 import React from 'react'
-import EditableMathQuill, { addStyles as addMathquillStyles } from 'react-mathquill'
+import { EditableMathQuill, addStyles as addMathquillStyles } from 'react-mathquill'
 
 // inserts the required css to the <head> block.
 // You can skip this, if you want to do that by your self.
@@ -45,7 +45,8 @@ export default class App extends React.Component {
  * Static component
  */
 import React from 'react'
-import StaticMathQuill, {
+import {
+  StaticMathQuill,
   addStyles as addMathquillStyles,
 } from 'react-mathquill'
 
