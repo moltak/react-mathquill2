@@ -4,6 +4,10 @@ The original version of library is here! [viktorstrate/react-mathquill](https://
 
 [![npm version](https://badge.fury.io/js/react-mathquill.svg)](https://badge.fury.io/js/react-mathquill2.svg)
 
+## Typescript
+
+You can use it with typescript. Refer to [.index.d.ts](https://github.com/moltak/react-mathquill2/blob/master/index.d.ts)
+
 ## Example
 
 > Link to an [example](https://moltak.github.io/react-mathquill2/)
